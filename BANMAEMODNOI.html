@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บ้านแม่มดน้อย Tarot House - เปิดไพ่ Tarot ดูดวงออนไลน์</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Mitr:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- ตั้งค่าสไตล์พื้นฐาน (CSS Reset & Variables) --- */
+        :root {
+            --bg-magic: linear-gradient(135deg, #2c1654 0%, #4a2574 50%, #7c478a 100%);
+            --purple-dark: #3a1d5d;
+            --purple-main: #683091;
+            --pink-pastel: #ffe3ec;
+            --pink-bright: #ff6595;
+            --gold-magic: #ffd700;
+            --font-title: 'Mitr', sans-serif;
+            --font-body: 'Chakra Petch', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-magic);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- ส่วนหัวเว็บไซต์ (Hero Section) --- */
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            position: relative;
+        }
+
+        
+        .logo-placeholder { 
+            width: 180px; 
+            height: 180px; 
+            background: #ffe3ec; 
+            border: 5px solid var(--gold-magic); 
+            border-radius: 50%; 
+            margin: 0 auto 1.5rem; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: var(--purple-dark); 
+            font-family: var(--font-title); 
+            font-weight: bold; 
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.4); 
+            font-size: 1.2rem; 
+           <img src="logo.png.jpg" alt="โลโก้บ้านแม่มดน้อย">
+    
+    }
+
+        .hero h1 {
+            font-family: var(--font-title);
+            font-size: 2.5rem;
+            color: #ffffff;
+            text-shadow: 0 0 10px var(--pink-bright), 0 0 20px var(--purple-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--pink-pastel);
+            letter-spacing: 1px;
+        }
+
+        .sparkle {
+            color: var(--gold-magic);
+            display: inline-block;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.7; }
+        }
+
+        /* --- คอนเทนเนอร์หลัก --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+        
+
+        /* --- จุดเด่นของร้าน (Features) --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--purple-dark);
+            padding: 1.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border: 2px solid var(--pink-pastel);
+        }
+
+        .feature-card h3 {
+            font-family: var(--font-title);
+            color: var(--purple-main);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        /* --- โซนเลือกแพ็กเกจ (Package Section) --- */
+        .section-title {
+            text-align: center;
+            font-family: var(--font-title);
+            font-size: 1.8rem;
+            margin: 2.5rem 0 1.5rem;
+            color: #ffffff;
+            border-bottom: 2px dashed var(--pink-bright);
+            padding-bottom: 0.5rem;
+        }
+
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* กล่องแพ็กเกจดีไซน์หวานๆ แบบการ์ดดูดวง */
+        .package-card {
+            background: #ffffff;
+            color: #333333;
+            border-radius: 24px;
+            padding: 1.5rem;
+            border: 3px solid #f9ccdc;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 101, 149, 0.3);
+        }
+
+        /* หัวข้อสีชมพู/ม่วงตามสไตล์รูปภาพ */
+        .package-header {
+            background: linear-gradient(90deg, #ff6595, #b55fe6);
+            color: white;
+            padding: 0.6rem;
+            border-radius: 14px;
+            text-align: center;
+            font-family: var(--font-title);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .package-price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--pink-bright);
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .package-price span {
+            font-size: 1rem;
+            color: #666666;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .package-features li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* ปุ่มเลือกซื้อ */
+        .btn-select {
+            background: var(--purple-main);
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 12px;
+            font-family: var(--font-title);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-select:hover {
+            background: var(--purple-dark);
+            color: var(--gold-magic);
+        }
+
+        /* --- ฟูตเตอร์ / ช่องทางการติดต่อ --- */
+        footer {
+            background: rgba(44, 22, 84, 0.9);
+            text-align: center;
+            padding: 2rem 1rem;
+            border-top: 3px solid var(--pink-bright);
+            margin-top: 4rem;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .btn-line { background-color: #06C755; }
+        .btn-messenger { background-color: #0084FF; }
+        .btn-ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="logo-placeholder">
+            บ้านแม่มดน้อย<br>Tarot House
+        </div>
+        <h1>บ้านแม่มดน้อย Tarot House</h1>
+        <p><span class="sparkle">✦</span> เปิดไพ่ทาโรต์ <span class="sparkle">✦</span> ให้คำแนะนำ <span class="sparkle">✦</span> ดูดวงทุกเรื่องที่คุณอยากรู้</p>
+    </header>
+
+    <div class="container">
+
+        <section class="features-grid">
+            <div class="feature-card">
+                <h3>📄 ผลการดูดวงจัดทำเป็นไฟล์ PDF</h3>
+                <p>สรุปคำทำนายอย่างเป็นระเบียบ อ่านย้อนหลังได้ตลอด เหมาะสำหรับเก็บเป็นบันทึกส่วนตัว</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔮 ดูดวงด้วยใจ</h3>
+                <p>วิเคราะห์ลึก เจาะตรงประเด็น พร้อมเป็นกำลังใจและแนวทางคำแนะนำให้คุณเสมอ</p>
+            </div>
+        </section>
+
+        <h2 class="section-title">🔮 แพ็กเกจคำถามเจาะจง (เลือกเรื่องที่อยากรู้)</h2>
+        <section class="package-grid">
+            
+            <div class="package-card">
+                <div>
+                    <div class="package-header">แพ็กเกจคนโสด 💖</div>
+                    <ul class="package-features">
+                        <li>📍 ช่วงนี้จะมีคนเข้ามาไหม?</li>
+                        <li>📍 คนที่เข้ามาจะเป็นลักษณะไหน?</li>
+                        <li>📍 ควรเปิดใจให้คุณให้โอกาสตัวเอง?</li>
+                        <li>📍 ความรักใน 3 เดือนข้างหน้าจะเป็นอย่างไร?</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="package-price">59 <span>บาท</span></div>
+                    <button class="btn-select" onclick="selectPackage('แพ็กเกจคนโสด','59 บาท')">จองคิวแพ็กเกจนี้</button>
+                  
+                </div>
+            </div>
+
+            <div class="package-card">
+                <div>
+                    <div class="package-header">แพ็กเกจคนแอบชอบ 💌</div>
+                    <ul class="package-features">
+                        <li>📍 เขาคิดยังไงกับเรา?</li>
+                        <li>📍 เขามีแนวโน้มว่าเราสนใจเราไหม?</li>
+                        <li>📍 ตอนนี้เขามีคนอื่นในใจหรือเปล่า?</li>
+                        <li>📍 ถ้ารู้ตัวควรทำยังไงต่อดี?</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="package-price">79 <span>บาท</span></div>
+                    <button class="btn-select" onclick="selectPackage('แพ็กเกจคนแอบชอบ','79 บาท')">จองคิวแพ็กเกจนี้</button>
+                    </button>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <div>
+                    <div class="package-header">แพ็กเกจคนมีแฟน 💍</div>
+                    <ul class="package-features">
+                        <li>📍 ตอนนี้เขารู้สึกอย่างไรกับเรา?</li>
+                        <li>📍 ความสัมพันธ์มั่นคงแค่ไหน?</li>
+                        <li>📍 มีเรื่องอะไรที่ต้องระวัง?</li>
+                        <li>📍 เขาคาดหวังอะไรจากเรา?</li>
+                        <li>📍 แนวโน้มความรักในอนาคตเป็นอย่างไร?</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="package-price">99 <span>บาท</span></div>
+                    <button class="btn-select" onclick="selectPackage('แพ็กเกจคนมีแฟน','99 บาท')">จองคิวแพ็กเกจนี้</button>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <div>
+                    <div class="package-header">แพ็กเกจคนคุย 💬</div>
+                    <ul class="package-features">
+                        <li>📍 เขาจริงจังกับเราหรือไม่?</li>
+                        <li>📍 มองอนาคตความสัมพันธ์อย่างไร?</li>
+                        <li>📍 สิ่งที่ต้องระวังในสถานะนี้?</li>
+                        <li>📍 ความสัมพันธ์จะพัฒนาไปทางไหน?</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="package-price">99 <span>บาท</span></div>
+                    <button class="btn-select" onclick="selectPackage('แพ็กเกจคนคุย','99 บาท')">จองคิวแพ็กเกจนี้</button>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <div>
+                    <div class="package-header">แพ็กเกจคนอกหัก / คนเก่า 💔</div>
+                    <ul class="package-features">
+                        <li>📍 เขายังคิดถึงเราอยู่ไหม?</li>
+                        <li>📍 เขารู้สึกเสียใจต่อความสัมพันธ์นี้หรือไม่?</li>
+                        <li>📍 มีโอกาสกลับมาคุยกันอีกไหม?</li>
+                        <li>📍 ถ้ากลับมา ความสัมพันธ์จะดีขึ้นไหม?</li>
+                        <li>📍 ไพ่แนะนำให้รอหรือเดินต่อ?</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="package-price">89 <span>บาท</span></div>
+                    <button class="btn-select" onclick="selectPackage('แพ็กเกจคนอกหัก / คนเก่า','89 บาท')">จองคิวแพ็กเกจนี้</button>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <div>
+                    <div class="package-header">แพ็กเกจเนื้อคู่ 👰</div>
+                    <ul class="package-features">
+                        <li>📍 เนื้อคู่กำลังเข้ามาเมื่อไหร่?</li>
+                        <li>📍 ลักษณะนิสัยของเนื้อคู่เป็นอย่างไร?</li>
+                        <li>📍 จะเจอกันจากช่องทางไหน?</li>
+                        <li>📍 ความสัมพันธ์จะเริ่มต้นอย่างไร?</li>
+                        <li>📍 อุปสรรคก่อนเจอเนื้อคู่คืออะไร?</li>
+                        <li>📍 ควรปรับตัวด้านไหนเพื่อดึงดูดความรักที่ดี?</li>
+                        <li>📍 ไพ่มีคำแนะนำอะไรเกี่ยวกับความรักครั้งต่อไป?</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="package-price">129 <span>บาท</span></div>
+                    <button class="btn-select" onclick="selectPackage('แพ็กเกจเนื้อคู่','129 บาท')">จองคิวแพ็กเกจนี้</button>
+                </div>
+            </div>
+        
+            <div class="package-card">
+                <div>
+                    <div class="package-header">แพ็กเกจครอบครัว 👨‍👩‍👧‍👦</div>
+                    <ul class="package-features">
+                        <li>📍 บรรยากาศในครอบครัวช่วงนี้เป็นอย่างไร?</li>
+                        <li>📍 มีเรื่องใดที่ควรระวังหรือไม่?</li>
+                        <li>📍 ความสัมพันธ์กับคนในบ้านจะดีขึ้นไหม?</li>
+                        <li>📍 ปัญหาที่ค้างคาอยู่มีแนวโน้มคลี่คลายหรือไม่?</li>
+                        <li>📍 ไพ่มีคำแนะนำสำหรับครอบครัวอย่างไร?</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="package-price">99 <span>บาท</span></div>
+                    <button class="btn-select" onclick="selectPackage('แพ็กเกจครอบครัว','99 บาท')">จองคิวแพ็กเกจนี้</button>
+                </div>
+            </div>   
+
+            <div class="package-card">
+                <div>
+                    <div class="package-header">แพ็กเกจสุขภาพ 🌿</div>
+                    <ul class="package-features">
+                        <li>📍 สุขภาพโดยรวมช่วงนี้เป็นอย่างไร?</li>
+                        <li>📍 มีเรื่องใดที่ควรใส่ใจเป็นพิเศษไหม?</li>
+                        <li>📍 ควรปรับพฤติกรรมด้านใด?</li>
+                        <li>📍 สุขภาพใจช่วงนี้เป็นอย่างไ?</li>
+                        <li>📍 ไพ่มีคำแนะนำในการดูแลตัวเองอย่างไร?</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="package-price">99 <span>บาท</span></div>
+                    <button class="btn-select" onclick="selectPackage('แพ็กเกจสุขภาพ','99 บาท')">จองคิวแพ็กเกจนี้</button>
+                </div>
+            </div>   
+
+        </section>
+
+        <h2 class="section-title">📅 แพ็กเกจดูดวงรายสัปดาห์ / รายเดือน / รายปี</h2>
+        <section class="package-grid">
+            
+            <div class="package-card">
+                <div>
+                    <div class="package-header" style="background: linear-gradient(90deg, #b55fe6, #3a1d5d);">โปรรายเดือน 🗓️</div>
+                    <p style="text-align: center; font-size: 0.9rem; color: #666;">ดูครบละเอียด 4 เรื่องสำคัญ</p>
+                    <ul class="package-features" style="margin-top: 0.5rem;">
+                        <li>🌸 ความรัก</li>
+                        <li>📝 การเรียน</li>
+                        <li>💼 การงาน</li>
+                        <li>💰 การเงิน</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="package-price">119 <span>บาท</span></div>
+                    <button class="btn-select" onclick="selectPackage('โปรรายเดือน','119 บาท')">จองคิวแพ็กเกจนี้</button>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <div>
+                    <div class="package-header" style="background: linear-gradient(90deg, #b55fe6, #3a1d5d);">โปรรายปี 🎉</div>
+                    <p style="text-align: center; font-size: 0.9rem; color: #666;">จัดเต็ม 6 เรื่องรวมคำแนะนำตลอดปี</p>
+                    <ul class="package-features" style="margin-top: 0.5rem;">
+                        <li>❤️ ความรัก / 📚 การเรียน / 💼 การงาน</li>
+                        <li>💵 การเงิน / 🩺 สุขภาพ / 🔮 เหตุการณ์สำคัญ</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="package-price">199 <span>บาท</span></div>
+                    <button class="btn-select" onclick="orderPackage('โปรรายปี 199 บาท')">จองคิวแพ็กเกจนี้</button>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <footer>
+        <p>🔮 ขั้นตอนการจองคิว: กดเลือกแพ็กเกจ -> ทักแชทชำระเงิน -> รอรับไฟล์ PDF ทางแชทได้เลยค่ะ</p>
+        <div class="social-buttons">
+            <a href="https://lin.ee/phfuYMe" class="social-btn btn-line" target="_blank">LINE Official</a>
+            <a href="https://m.me/yourpage" class="social-btn btn-messenger" target="_blank">Facebook Messenger</a>
+            <a href="https://www.instagram.com/yourpage" class="social-btn btn-ig" target="_blank">Instagram DM</a>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.8rem; color: var(--pink-pastel);">© 2026 บ้านแม่มดน้อย Tarot House. All Rights Reserved.</p>
+        
+        <div id="booking-form-container" style="display:none; background:#fff; color:#333; padding:25px; border-radius:20px; margin-top:30px;">
+
+    <h2 style="text-align:center; color:#5c2d91;">
+        🔮 กรอกข้อมูลจองคิว
+    </h2>
+
+    <div style="background:#f8f8f8; padding:12px; border-radius:10px; margin:20px 0; text-align:center;">
+        <b>แพ็กเกจที่เลือก :
+            <span id="current-package" style="color:#ff4f81;">
+                ไม่ได้เลือกแพ็กเกจ
+            </span>
+        </b>
+    </div>
+
+    <p style="text-align:center;font-size:18px;">
+    💰 สแกนจ่ายเงินตามราคาแพ็กเกจ
+    (<span id="current-price">0 บาท</span>)
+</p>
+
+<div style="text-align:center;margin:20px 0;">
+    <img src="qrcode.png.jpg" width="220" alt="QR PromptPay">
+</div>
+
+    <label>📅 เลือกวันดูดวง</label><br>
+    <input type="date" style="width:100%;padding:10px;margin-bottom:15px;">
+
+    <label>⏰ เลือกเวลาที่สะดวก</label><br>
+    <select style="width:100%;padding:10px;margin-bottom:15px;">
+        <option>20:00</option>
+        <option>21:00</option>
+        <option>22:00</option>
+        <option>23:00</option>
+    </select>
+
+    <label>👤 ชื่อ-นามสกุล</label><br>
+    <input type="text" placeholder="ชื่อของคุณ" style="width:100%;padding:10px;margin-bottom:15px;">
+
+    <label>🎂 วันเกิด</label><br>
+    <input type="date" style="width:100%;padding:10px;margin-bottom:15px;">
+
+    <label>🔮 คำถามที่ต้องการถามหมอดู</label><br>
+
+    <textarea rows="4"
+          placeholder="พิมพ์คำถามของคุณ..."
+          style="width:100%;padding:10px;margin-bottom:15px;"></textarea>
+
+    <label>📷 แนบสลิปการโอนเงิน</label><br>
+
+    <input type="file"
+       accept="image/*"
+       id="payment-slip"
+       style="width:100%;padding:10px;margin-bottom:15px;">
+
+    <p style="font-size:14px;color:#666;">
+     กรุณาอัปโหลดสลิปการโอนเงินเพื่อยืนยันการจอง
+    </p>
+
+    <button
+    type="button"
+    onclick="confirmBooking()"
+    style="width:100%;margin-top:20px;padding:15px;background:#6d35a5;color:#fff;border:none;border-radius:12px;">
+    ยืนยันการจอง
+    </button>
+
+</div>
+            
+            
+<script>
+
+function selectPackage(packageName, packagePrice){
+
+    document.getElementById("booking-form-container").style.display = "block";
+
+    document.getElementById("current-package").innerText = packageName;
+
+    document.getElementById("current-price").innerText = packagePrice;
+
+    document.getElementById("booking-form-container").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function confirmBooking(){
+
+    const slip = document.getElementById("payment-slip");
+
+    if(slip.files.length == 0){
+        alert("กรุณาแนบสลิปการโอนเงิน");
+        return;
+    }
+
+    alert("✅ ส่งข้อมูลจองคิวเรียบร้อย");
+}
+
+</script>
+</body>
+</html>
